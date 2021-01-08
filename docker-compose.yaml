@@ -1,0 +1,11 @@
+services:
+  scala-bank-db:
+    container_name: scala-bank-db
+    image: postgres:12
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ${PWD}/docker/scala-bank-db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
