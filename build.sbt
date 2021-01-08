@@ -9,6 +9,8 @@ lazy val commonSettings = Seq(
 lazy val libraries = {
   Seq(
     guice,
+    evolutions,
+    jdbc,
     "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
   )
 }

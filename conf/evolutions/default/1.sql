@@ -1,3 +1,6 @@
+-- address and customer tables
+
+-- !Ups
 DROP TYPE IF EXISTS type_address;
 CREATE TYPE type_address AS ENUM ('HOME', 'BUSINESS');
 
@@ -40,5 +43,11 @@ CREATE TABLE customer
 
     CONSTRAINT pk_customer__c_id PRIMARY KEY (c_id),
     CONSTRAINT fk_customer__c_address_id___address__a_id
-        FOREIGN KEY (c_address_id) REFERENCES address (a_id)
+        FOREIGN KEY (c_address_id) REFERENCES address (a_id) ON DELETE RESTRICT
 );
+
+-- !Downs
+DROP TABLE customer;
+DROP TABLE address;
+DROP TYPE type_address;
+DROP TYPE type_account;
