@@ -12,18 +12,17 @@ CREATE TYPE type_account AS ENUM (
     'CERTIFICATES_OF_DEPOSIT',
     'RETIREMENT',
     'BROKERAGE',
-    'STUDENT'
-);
+    'STUDENT');
 
 CREATE TABLE address
 (
     a_id           BIGSERIAL,
-    a_first_line   VARCHAR(100) NOT NULL,
-    a_second_line  VARCHAR(100),
+    a_line_1       VARCHAR(100) NOT NULL,
+    a_line_2       VARCHAR(100),
     a_zip_code     VARCHAR(20)  NOT NULL,
     a_city         VARCHAR(50)  NOT NULL,
     a_country_code CHAR(2)      NOT NULL,
-    a_type         type_address NOT NULL,
+    a_address_type type_address NOT NULL,
 
     CONSTRAINT pk_address__a_id PRIMARY KEY (a_id)
 );
