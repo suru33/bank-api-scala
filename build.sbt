@@ -12,6 +12,7 @@ lazy val libraries = {
     evolutions,
     jdbc,
     ws,
+    "org.playframework.anorm" %% "anorm" % "2.6.8",
     "org.postgresql" % "postgresql" % "42.2.18",
     "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
   )
