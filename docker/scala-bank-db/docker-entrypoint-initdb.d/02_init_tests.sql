@@ -1,5 +1,5 @@
-CREATE DATABASE
-scalabank_tests;
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
-GRANT ALL PRIVILEGES ON DATABASE
-scalabank_tests TO scalabank;
+CREATE DATABASE scalabank_tests;
+
+GRANT ALL PRIVILEGES ON DATABASE scalabank_tests TO scalabank;
