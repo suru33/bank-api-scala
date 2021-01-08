@@ -1,4 +1,4 @@
--- address and customer tables
+-- Initial script
 
 -- !Ups
 DROP TYPE IF EXISTS type_address;
@@ -30,7 +30,7 @@ CREATE TABLE address
 
 CREATE TABLE customer
 (
-    c_id             UUID DEFAULT uuid_generate_v4(),
+    c_id             UUID DEFAULT gen_random_uuid(),
     c_account_number BIGSERIAL    NOT NULL,
     c_first_name     VARCHAR(100) NOT NULL,
     c_middle_name    VARCHAR(100),
