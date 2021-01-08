@@ -11,6 +11,7 @@ lazy val libraries = {
     guice,
     evolutions,
     jdbc,
+    "org.postgresql" % "postgresql" % "42.2.18",
     "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
   )
 }
