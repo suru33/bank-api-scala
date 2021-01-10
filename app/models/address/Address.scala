@@ -42,4 +42,3 @@ object Address {
         Address(id, line1, line2, zipCode, city, countryCode, addressType)
     }
 }
-
