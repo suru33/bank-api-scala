@@ -13,5 +13,12 @@ services:
       - POSTGRES_PASSWORD=postgres
     volumes:
       - ${PWD}/docker/scala-bank-db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - ${PWD}/pg-data:/var/lib/postgresql/data/
     ports:
-      - 5432:5432
+      - 6900:5432
+    networks:
+      - scala-bank-network
+
+networks:
+  scala-bank-network:
+    name: scala-bank-network
