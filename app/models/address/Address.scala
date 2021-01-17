@@ -41,4 +41,8 @@ object Address {
       case id ~ line1 ~ line2 ~ zipCode ~ city ~ countryCode ~ addressType =>
         Address(id, line1, line2, zipCode, city, countryCode, addressType)
     }
+
+  def apply(id: Long, request: AddressRequest): Address =
+    Address(id, request.line1, request.line2, request.zipCode, request.city, request.countryCode, request.addressType)
+
 }

@@ -4,6 +4,7 @@ import com.google.inject.Inject
 import com.google.inject.Singleton
 import models.FailureEntity
 import models.SuccessEntity
+import models.address.Address
 import models.address.AddressRequest
 import play.api.libs.json.JsError
 import play.api.libs.json.JsSuccess
@@ -24,7 +25,7 @@ class AddressController @Inject()(
     request.body.validate[AddressRequest] match {
       case JsSuccess(addressRequest, _) =>
         addressService.createAddress(addressRequest) map {
-          id: Long => Created(SuccessEntity(id))
+          result: Address => Created(SuccessEntity(result))
         }
       case JsError(_) => Future.successful(BadRequest(FailureEntity()))
     }
