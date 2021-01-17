@@ -1,6 +1,6 @@
--- Initial script
+# -- Initial script
 
--- !Ups
+# -- !Ups
 DROP TYPE IF EXISTS type_address;
 CREATE TYPE type_address AS ENUM ('HOME', 'BUSINESS');
 
@@ -12,7 +12,8 @@ CREATE TYPE type_account AS ENUM (
     'CERTIFICATES_OF_DEPOSIT',
     'RETIREMENT',
     'BROKERAGE',
-    'STUDENT');
+    'STUDENT'
+);
 
 CREATE TABLE address
 (
@@ -45,8 +46,8 @@ CREATE TABLE customer
         FOREIGN KEY (c_address_id) REFERENCES address (a_id) ON DELETE RESTRICT
 );
 
--- !Downs
-DROP TABLE customer;
-DROP TABLE address;
-DROP TYPE type_address;
-DROP TYPE type_account;
+# -- !Downs
+DROP TABLE IF EXISTS customer;
+DROP TABLE IF EXISTS address;
+DROP TYPE IF EXISTS type_address;
+DROP TYPE IF EXISTS type_account;
