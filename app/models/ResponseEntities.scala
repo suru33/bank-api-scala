@@ -1,5 +1,6 @@
 package models
 
+import play.api.libs.json.JsObject
 import play.api.libs.json.JsString
 import play.api.libs.json.JsValue
 import play.api.libs.json.Json
@@ -29,7 +30,7 @@ object FailureEntity {
     "exception" -> JsString(exception.toString)
   )
 
-  def apply(content: AnyVal = "Bad Request"): JsValue = Json.obj(
+  def apply(content: Any = "Bad Request"): JsObject = Json.obj(
     "success" -> false,
     "response" -> content.toString
   )
