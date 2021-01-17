@@ -11,7 +11,7 @@ import java.sql.Connection
 class AddressDao @Inject()(implicit ec: DatabaseExecutionContext) {
   def createAddress(addressRequest: AddressRequest)(implicit connection: Connection): Long = SQL(
     s"""
-       | INSERT INTO address(
+       | INSERT INTO address (
        |    a_line_1,
        |    a_line_2,
        |    a_zip_code,
