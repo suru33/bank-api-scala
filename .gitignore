@@ -6,5 +6,7 @@ target
 /.project
 /.settings
 /.vscode
+/.bsp
+/pg-data
 /RUNNING_PID
 .DS_Store
